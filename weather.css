@@ -1,0 +1,242 @@
+        /* Glass Effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Weather Backgrounds */
+        .weather-clear {
+            background: linear-gradient(135deg, #87ceeb 0%, #98d8e8 100%);
+        }
+
+        .weather-cloudy {
+            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+        }
+
+        .weather-rainy {
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+        }
+
+        .weather-default {
+            background: linear-gradient(135deg, #87ceeb 0%, #98d8e8 100%);
+        }
+
+        /* Particle Effects */
+        .decorative-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-particle:nth-child(1) {
+            width: 20px;
+            height: 20px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-particle:nth-child(2) {
+            width: 15px;
+            height: 15px;
+            top: 20%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+
+        .floating-particle:nth-child(3) {
+            width: 25px;
+            height: 25px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .floating-particle:nth-child(4) {
+            width: 18px;
+            height: 18px;
+            bottom: 30%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .floating-particle:nth-child(5) {
+            width: 12px;
+            height: 12px;
+            top: 50%;
+            left: 50%;
+            animation-delay: 3s;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg); 
+            }
+        }
+
+        @keyframes rainfall {
+            0% { 
+                transform: translateY(-100vh) rotate(10deg);
+                opacity: 0;
+            }
+            10% { 
+                opacity: 1; 
+            }
+            90% { 
+                opacity: 1; 
+            }
+            100% { 
+                transform: translateY(100vh) rotate(10deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes clouddrift {
+            0% { 
+                transform: translateX(-100vw); 
+            }
+            100% { 
+                transform: translateX(100vw); 
+            }
+        }
+
+        @keyframes snowfall {
+            0% { 
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { 
+                opacity: 1; 
+            }
+            90% { 
+                opacity: 1; 
+            }
+            100% { 
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { 
+                transform: rotate(0deg); 
+            }
+            100% { 
+                transform: rotate(360deg); 
+            }
+        }
+
+        /* Weather Icons */
+        .weather-icon {
+            font-size: 4rem;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Pulse animation for search button */
+        @keyframes pulse {
+            0% { 
+                transform: scale(1); 
+            }
+            50% { 
+                transform: scale(1.05); 
+            }
+            100% { 
+                transform: scale(1); 
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        /* Rain Particles */
+        .rain-particle {
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8), transparent);
+            animation: rainfall 1s linear infinite;
+        }
+
+        /* Cloud Particles */
+        .cloud-particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            animation: clouddrift 20s linear infinite;
+        }
+
+        /* Snow Particles */
+        .snow-particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: snowfall 3s linear infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .floating-particle {
+                display: none;
+            }
+            
+            .weather-icon {
+                font-size: 3rem;
+            }
+            
+            .glass-effect {
+                margin: 0 10px;
+            }
+            
+            h1 {
+                font-size: 2rem !important;
+            }
+            
+            .weather-info h2 {
+                font-size: 1.5rem !important;
+            }
+            
+            .temp-display {
+                font-size: 3rem !important;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .grid-cols-2 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+            
+            .md\:grid-cols-4 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
