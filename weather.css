@@ -201,42 +201,50 @@
             animation: snowfall 3s linear infinite;
         }
 
-        /* Responsive Design */
-        @media (max-width: 480px) {
-            .floating-particle {
-                display: none;
-            }
-            
-            .weather-icon {
-                font-size: 3rem;
-            }
-            
-            .glass-effect {
-                margin: 0 10px;
-            }
-            
-            h1 {
-                font-size: 2rem !important;
-            }
-            
-            .weather-info h2 {
-                font-size: 1.5rem !important;
-            }
-            
-            .temp-display {
-                font-size: 3rem !important;
-            }
-            
-            .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .grid-cols-2 {
-                grid-template-columns: repeat(1, minmax(0, 1fr));
-            }
-            
-            .md\:grid-cols-4 {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
+     @media (max-width: 480px) {
+    .floating-particle {
+        display: none;
+    }
+
+    .weather-icon {
+        font-size: 3rem;
+    }
+
+    .glass-effect {
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    .weather-info h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .temp-display {
+        font-size: 3rem !important;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .grid-cols-2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .md\:grid-cols-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Tambahan fix untuk button */
+    button, .btn {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
